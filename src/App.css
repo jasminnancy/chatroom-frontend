@@ -6,7 +6,7 @@
   margin: auto;
   margin-top: 25px;
   width: 60vw;
-  border-style: outset;
+  border: 3px outset;
 }
 
 .header {
@@ -30,7 +30,38 @@
 }
 
 .sub-container {
-  border-style: inset;
+  border: 3px inset;
   text-align: left;
   padding: 3px;
+  overflow-y: scroll;
+}
+
+.message-list {
+  height: 200px;
+  max-height: 200px;
+}
+
+.message input[type=text] {
+  width: 100%;
+  padding: 5px;
+  margin: 2px 0;
+  height: 75px;
+  display: inline-block;
+  border: 2px inset #ccc;
+  box-sizing: border-box;
+}
+
+.message input[type=submit] {
+  width: 100%;
+  background-color: #c9c9c9;
+  color: #1f1f1f;
+  text-emphasis: bold;
+  padding: 10px 20px;
+  margin-top: 3px;
+  border: none;
+  cursor: pointer;
+}
+
+.message input[type=submit]:hover {
+  background-color: #aaaaaa;
 }

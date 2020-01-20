@@ -1,14 +1,23 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 import Messages from '../components/Messages'
 import TextBox from '../components/TextBox'
 
-const MessagesContainer = () => {
+const MessagesContainer = (props) => {
     return (
         <div>
-            <Messages />
-            <TextBox />
+            <Messages messages={props.messages} />
+            <TextBox messages={props.messages} />
         </div>
     )
 }
 
-export default MessagesContainer
+//gets messages in order to pass them to components for conditional rendering
+const mapStateToProps = (state) => {
+    return {
+        messages: state.messages
+    }
+}
+
+export default connect(mapStateToProps)(MessagesContainer)

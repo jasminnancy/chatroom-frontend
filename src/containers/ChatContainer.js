@@ -2,11 +2,11 @@ import React from 'react'
 import MessagesContainer from './MessagesContainer'
 import Users from '../components/Users'
 
-const ChatContainer = () => {
+const ChatContainer = (props) => {
     return (
-        <div className='container'>
+        <div className='container messages'>
             <MessagesContainer />
-            <Users />
+            <Users users={props.users} />
         </div>
     )
 }
