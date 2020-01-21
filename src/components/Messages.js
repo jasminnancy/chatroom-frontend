@@ -2,30 +2,25 @@ import React, { Component} from 'react'
 import { connect } from 'react-redux'
 
 class Messages extends Component {
-    componentDidMount() {
-        this.handleObserverForScroll()
-    }
-
     componentDidUpdate() {
         this.handleObserverForScroll()
     }
 
     handleObserverForScroll = () => {
         let messagesList = document.querySelector('.message-list')
-        let observer = new MutationObserver(this.scrollToBottom)
+        let observer = new MutationObserver(() => this.scrollToBottom(messagesList))
         let config = {childList: true}
         observer.observe(messagesList, config)
     }
 
-    scrollToBottom = () => {
-        let messagesList = document.querySelector('.message-list')
+    scrollToBottom = (messagesList) => {
         messagesList.scrollTop = messagesList.scrollHeight
     }
 
     render() {
         return (
             <div className='sub-container message-list'>
-                <div>Messages:</div>
+                <div className='sub-header'>Messages:</div>
                 {this.props.messages
                     ? this.props.messages.map(message => 
                         <div>

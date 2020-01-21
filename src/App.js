@@ -14,6 +14,13 @@ class App extends Component {
 
     //passes users array from props and the generated username
     this.props.handleUsername(username, this.props.users)
+
+    this.openWebSocket()
+  }
+
+  openWebSocket = () => {
+    console.log('how?!?')
+    
   }
 
   render() {

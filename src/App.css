@@ -36,6 +36,11 @@
   overflow-y: scroll;
 }
 
+.sub-header {
+  background-color: #c9c8c8;
+  padding: 3px;
+}
+
 .message-list {
   height: 250px;
   max-height: 250px;
