@@ -33,7 +33,7 @@
   border: 3px inset;
   text-align: left;
   padding: 3px;
-  overflow-y: scroll;
+  overflow-y: scroll
 }
 
 .sub-header {
@@ -42,8 +42,12 @@
 }
 
 .message-list {
+  text-align: left;
+  padding: 3px;
+  border: 1px inset;
   height: 250px;
   max-height: 250px;
+  overflow-y: scroll;
 }
 
 .message input[type=text] {
@@ -69,4 +73,12 @@
 
 .message input[type=submit]:hover {
   background-color: #aaaaaa;
+}
+
+.user-list {
+  border: 2px inset;
+  height: 392px;
+  text-align: left;
+  padding: 3px;
+  overflow-y: scroll;
 }

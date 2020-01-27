@@ -19,16 +19,18 @@ class Messages extends Component {
 
     render() {
         return (
-            <div className='sub-container message-list'>
-                <div className='sub-header'>Messages:</div>
-                {this.props.messages
-                    ? this.props.messages.map(message => 
-                        <div>
-                            {message.user === this.props.username 
-                                ? 'Me' 
-                                    : message.user}: {message.message}
-                        </div>)
-                            : null}
+            <div>
+                <div className='sub-container sub-header'>Messages:</div>
+                <div className='message-list'>
+                    {this.props.messages
+                        ? this.props.messages.map(message => 
+                            <div>
+                                {message.user === this.props.username 
+                                    ? 'Me' 
+                                        : message.user}: {message.message}
+                            </div>)
+                                : null}
+                </div>
             </div>
         )
     }
