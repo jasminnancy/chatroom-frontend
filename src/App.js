@@ -19,8 +19,9 @@ class App extends Component {
   }
 
   openWebSocket = () => {
-    console.log('how?!?')
-    
+    const socket = new WebSocket('ws://localhost:3000')
+    // socket.onopen = () => socket.send('Gotta get this working')
+    // socket.onmessage = (e) => console.log(e.data)
   }
 
   render() {
