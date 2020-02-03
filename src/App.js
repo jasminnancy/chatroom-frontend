@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-
+// import SockJS from 'sockjs-client'
 import './App.css';
 
 import ChatContainer from './containers/ChatContainer'
@@ -19,9 +19,19 @@ class App extends Component {
   }
 
   openWebSocket = () => {
-    const socket = new WebSocket('ws://localhost:3000')
-    // socket.onopen = () => socket.send('Gotta get this working')
-    // socket.onmessage = (e) => console.log(e.data)
+    // const socket = new SockJS('http://localhost:3000')
+
+    // socket.onopen = () => {
+    //   console.log('socket open')
+    // }
+
+    // socket.onmessage = (e) => {
+    //   console.log('message received:', e.data)
+    // }
+
+    // socket.onclose = () => {
+    //   console.log('closed')
+    // }
   }
 
   render() {
