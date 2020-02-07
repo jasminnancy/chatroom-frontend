@@ -100,10 +100,13 @@ const mapDispatchToProps = (dispatch) => {
         handleNewMessage: (message, messages, users) => {
             let newMessages
 
-            //checks to see if user is sending a message or joining
+            //checks to see if user is sending a message vs. joining
             if (message.user) {
+                //this is if a user sends a message
                 newMessages = [...messages, message]
 
+                //checks to see if user sending message is in current user's user list
+                //this is a workaround
                 if (users.filter(u => u === message.user) < 1) {
                     let newUsers = [...users, message.user]
 
@@ -113,6 +116,7 @@ const mapDispatchToProps = (dispatch) => {
                     })
                 }
             } else {
+                //this is if a user joins the chat
                 newMessages = [
                     ...messages, 
                     {user: message, 
