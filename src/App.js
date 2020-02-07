@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-// import SockJS from 'sockjs-client'
 import './App.css';
 
 import ChatContainer from './containers/ChatContainer'
@@ -12,26 +11,8 @@ class App extends Component {
     let random = Math.floor(Math.random() * 1000) + 1
     let username = 'NewUser' + random
 
-    //passes users array from props and the generated username
+    //passes users array from props and the generated username to add to users in store
     this.props.handleUsername(username, this.props.users)
-
-    this.openWebSocket()
-  }
-
-  openWebSocket = () => {
-    // const socket = new SockJS('http://localhost:3000')
-
-    // socket.onopen = () => {
-    //   console.log('socket open')
-    // }
-
-    // socket.onmessage = (e) => {
-    //   console.log('message received:', e.data)
-    // }
-
-    // socket.onclose = () => {
-    //   console.log('closed')
-    // }
   }
 
   render() {
@@ -39,7 +20,7 @@ class App extends Component {
       <div className='App'>
         <div className="chat-box">
           <Header />
-          <ChatContainer users={this.props.users}/>
+          <ChatContainer users={this.props.users} />
         </div>
       </div>
     );
@@ -66,7 +47,7 @@ const mapDispatchToProps = (dispatch) => {
       })
 
       dispatch({
-        type: 'GENERATE_USERNAME',
+        type: 'NEW_USERNAME',
         payload: username
       })
     }

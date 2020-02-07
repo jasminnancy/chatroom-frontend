@@ -7,9 +7,10 @@ let initialState = {
     users: []
 }
 
+//reducer for managing username
 let usernameReducer = (state=initialState.username, action) => {
     switch(action.type) {
-        case 'GENERATE_USERNAME':
+        case 'NEW_USERNAME':
             return action.payload
         default:
             return state

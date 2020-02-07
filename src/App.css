@@ -82,3 +82,7 @@
   padding: 3px;
   overflow-y: scroll;
 }
+
+.usernames {
+  list-style: none;
+}
