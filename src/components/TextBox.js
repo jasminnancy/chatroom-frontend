@@ -100,6 +100,7 @@ const mapDispatchToProps = (dispatch) => {
         handleNewMessage: (message, messages, users) => {
             let newMessages
 
+            //checks to see if user is sending a message or joining
             if (message.user) {
                 newMessages = [...messages, message]
 
