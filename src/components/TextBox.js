@@ -137,6 +137,7 @@ const mapDispatchToProps = (dispatch) => {
             })
         },
 
+        //removes user from users list when they leave
         handleClose: (users, user) => {
             let remainingUsers = users.filter(u => u.user !== user.user)
 
